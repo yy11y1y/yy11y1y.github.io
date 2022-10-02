@@ -1,0 +1,29 @@
+.o{
+    background-image:url(back\ 2.jpg) ;
+    z-index: -1;
+    }
+
+span{
+    color:white;
+    font-family: fantasy;
+    }
+
+.m{
+    margin: 2em 0px;
+    padding: 15px;
+    background-color:#F0F0F0;
+    }
+.f{
+    padding: 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: #F2E6E6;/*背景色*/
+    border-left: solid 10px #EBD6D6;/*左線*/
+    }
+.h{
+    padding: 2px;
+    margin: 2em 0;
+    background: #F2E6E6;
+    border-top: solid 5px #EBD6D6;
+    border-bottom: solid 5px #EBD6D6;
+}
