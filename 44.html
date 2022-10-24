@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -36,16 +41,30 @@
         <h1>大龜 龜 小龜</h1>
             </div>
 
-        <img src="t2.jpg"  width="600" >
-        <img src="t1.jpg"  width="300" >
-        <img src="t3.jpg"  width="300" >
-        <img src="t4.jpg"  width="600" >
-
+        <img  width="300px"  src="images/10.JPG"  alt="pic" id="img">
+        <p>
+            <a href="javascript:;" class="btn" data-control="last">上一張</a>
+            <a href="javascript:;" class="btn" data-control="next">下一張</a>
+        </p>
 
         <p> 中🐢中矩 </p>
         </div>
         <input type ="button" onclick="history.back()" value="back"></input>
 </main>
 </body>
+
+<script type="text/javascript">
+    var imgs = ["images/10.jpg","images/11.jpg","images/12.jpg","images/13.jpg",];
+    var index = 0;
+    var len = imgs.length;
+$(".btn").on("click" , function(){
+    if($(this).data("control") === "last"){
+        index = Math.max(0,--index);
+    }else
+        index = Math.min(len-1,++index);
+        document.title = (index+1)+"/"+len;
+        $("#img").attr("src",imgs[index]);
+    });
+</script>
 
 </html>
