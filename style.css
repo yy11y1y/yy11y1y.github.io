@@ -1,17 +1,74 @@
-.o{
-    background-image:url(back\ 2.jpg) ;
-    z-index: -1;
-    }
+nav a{
+    color: inherit;        /*移除超連結顏色*/
+    display: block;        /*讓a填滿li*/
+    font-size: 1.2rem;
+    padding: 15px;
+    text-decoration: none; /*移除超連結底線*/
+}
+nav > ul{
+    background-color: rgb(225, 195, 195);
+    list-style: none;      /*移除項目符號*/
+    margin: 0;
+    padding: 0;
+}
+nav a:hover{
+    background-color: rgb(159, 90, 90);
+    color: white;
+}
+.flex-nav {
+    display: flex;
+    justify-content: space-evenly
+}
 
-span{
-    color:white;
-    font-family: fantasy;
-    }
+
+
+.o{
+    background-image:url(background.jpg) ;
+    z-index: -1;
+    background-size: 100%;
+    height: 900px;
+    margin: 0 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0% 0%;
+}
+
+@import url("reset.css");
+.text{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 130px;
+    text-align: left;
+    left: 200px;
+    font-weight: bold;
+    line-height: 200px;
+    text-transform: uppercase;
+    position: relative;
+    } 
+.effect01{
+    color: #90243E;
+    text-shadow:
+        0px 0px 0 #B63A51,
+        1px -1px 0 #B63A51,
+        2px -1px 0 #B63A51,
+        3px -3px 0 #B63A51,
+        4px -4px 0 #B63A51,
+        5px -5px 0 #B63A51,
+        6px -6px 0 #B63A51,
+        7px -7px 0 #B63A51,
+        8px -8px 0 #B63A51,
+        9px -9px 0 #db7084,
+        10px -10px 0 #db7084,
+        11px -11px 0 #db7084,
+        12px -12px 0 #db7084,
+        13px -13px 12px rgba(0, 0, 0, 0.55),
+        13px -13px 1px rgba(0, 0, 0, 0.5);
+}
 
 .m{
     margin: 2em 0px;
     padding: 15px;
-    background-color:#F0F0F0;
+    background-color:#E8DCCA;
     }
 .f{
     padding: 1em;
