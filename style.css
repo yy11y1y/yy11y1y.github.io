@@ -105,11 +105,12 @@ nav a:hover{
     padding: 15px;
     background-color:#C5949E;
     }
-/*二標－路線*/
+/*二標－分類*/
 #p1,#p2{
     text-align: center;
     font-size: 30px;
     color: #535151;
+    margin-top: 20px;
 }
 /*圖片輪播1*/
 /*定位*/
@@ -456,8 +457,43 @@ nav a:hover{
     padding: 15px;
     background-color:#E8DCCA;
 }
-
-
+/*僅圖片*/
+.container {
+    margin-left: 160px;
+    margin-top: 20px;
+    width: 300px;
+    height: 240px;
+    position: relative;
+    border: 8px solid;    
+    border-color: #f5f5f5;
+    border-bottom-width: 100px;
+    background-color: #f5f5f5;
+    box-shadow: #666 0 0 5px;
+    }
+    .container2 {
+        margin-left: 560px;
+        margin-top: -240px;
+        width: 300px;
+        height: 240px;
+        position: relative;
+        border: 8px solid;    
+        border-color: #f5f5f5;
+        border-bottom-width: 100px;
+        background-color: #f5f5f5;
+        box-shadow: #666 0 0 5px;
+        }
+    .container3 {
+        margin-left: 960px;
+        margin-top: -240px;
+        width: 300px;
+        height: 240px;
+        position: relative;
+        border: 8px solid;    
+        border-color: #f5f5f5;
+        border-bottom-width: 100px;
+        background-color: #f5f5f5;
+        box-shadow: #666 0 0 5px;
+        }
 
 
 
