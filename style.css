@@ -31,9 +31,6 @@ nav a:hover{
     display: flex;
     justify-content: space-evenly
 }
-#menu{
-
-}
 /*三條路背景圖*/
 .o{
     background-image:url(background.jpg) ;
@@ -504,13 +501,30 @@ nav a:hover{
 }
 /*飲料底圖*/
 .drink{
-    border-radius: 10px;
+    z-index: -1; /*置於底層*/
+    border-radius: 10px; /*邊界圓弧*/
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     display: block;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 50px;
+    opacity: 0.8; /*透明度*/
+    filter: alpha(opacity=80);
+}
+/*滑入效果*/
+.drink:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50); 
+}
+/*圖片中間的字*/
+.text1{
+    position: absolute;
+    top: 2465px;
+    left: 608px;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 
