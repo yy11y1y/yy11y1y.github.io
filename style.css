@@ -89,22 +89,19 @@ nav a:hover{
 #img{
     box-sizing: border-box;
     width: 250px;
-    margin-top: 70px;
-    margin-left: 160px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin-right: 60px;
     border-top: 30px #f8f5ef solid;
     border-left: 30px #f8f5ef solid;
     border-right: 30px #f8f5ef solid;
     border-bottom: 70px #f8f5ef solid;
 }
-#img1{
-    box-sizing: border-box;
-    width: 250px;
-    margin-top: 70px;
-    margin-left: 40px;
-    border-top: 30px #f8f5ef solid;
-    border-left: 30px #f8f5ef solid;
-    border-right: 30px #f8f5ef solid;
-    border-bottom: 70px #f8f5ef solid;
+pic{
+    display: flex;
+    text-align: center;
+    margin-right: 200px;
 }
 /*紅色背景*/
 .m{
@@ -113,7 +110,7 @@ nav a:hover{
     background-color:#C5949E;
     }
 /*二標－分類*/
-#p1,#p2,#p3,#p4{
+#p1,#p2,#p3,#p4,#p5{
     text-align: center;
     font-size: 30px;
     color: #535151;
@@ -142,11 +139,13 @@ nav a:hover{
     width: 300px;
     height: 375px;
 }
-
+.info{
+    font-size: 20px;
+}
 /*圖片輪播1*/
 .slider_container {
     width: 300px;
-    height: 240px;
+    height: 250px;
     position: relative;
     border: 8px solid;    
     border-color: #f5f5f5;
@@ -230,7 +229,7 @@ nav a:hover{
 /*定位*/
 .slider_container2 {
     width: 300px;
-    height: 240px;
+    height: 250px;
     position: relative;
     border: 8px solid;    
     border-color: #f5f5f5;
@@ -314,7 +313,7 @@ nav a:hover{
 /*定位*/
 .slider_container3 {
     width: 300px;
-    height: 240px;
+    height: 250px;
     position: relative;
     border: 8px solid;    
     border-color: #f5f5f5;
@@ -419,7 +418,7 @@ nav a:hover{
   color: #fff;
   cursor: pointer;
   font-family: 'Noto Serif TC', serif;
-  font-size: 100%;
+  font-size: 20px;
   font-weight: 900;
   line-height: 1.5;
   margin:0;
@@ -529,8 +528,8 @@ nav a:hover{
 }
 /*轉盤*/
 .text{
-    font-family:Helvetica, Arial, sans-serif;
-    font-size:10px;
+    font-family: 'Noto Serif TC', serif;
+    font-size:14px;
     pointer-events:none;
     }
 #chart{
@@ -539,6 +538,7 @@ nav a:hover{
     height:500px;
     top: 10px;
     left: 200px;
+    font-size: 13px;
 }
 #question{
     position: relative;
@@ -550,7 +550,7 @@ nav a:hover{
 #question h1{
     font-size: 20px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Noto Serif TC', serif;
     position: absolute;
     padding: 0;
     margin: 0;
