@@ -46,7 +46,7 @@
 
 
             </pre>
-        <h1><div contenteditable="true" class="text effect01">Wot Food？</div></h1>
+        <h1><div contenteditable="true" class="text3 effect01">Wot Food？</div></h1>
             <pre>
 
 
@@ -150,7 +150,7 @@
 
 
 
-        
+
 
 
     </pre>
@@ -203,7 +203,7 @@
         <h2 id="p3">飲料＆小吃</h2>
         <img src="images/底線.jpg" width="250" height="55" style="display:block; margin:auto;" />
         <div>
-            <img src="images/drink.jpg" width="750" height="422" class="drink" alt="" >
+            <img src="images/drink2.jpg" width="750" height="422" class="drink" alt="" >
             <div class="text1">減肥是明天的事！</div>
         </div>
     </div>
@@ -211,32 +211,225 @@
     <div class="d"> 
         <h2 id="p4">轉盤幫你選</h2>
         <img src="images/底線2.jpg" width="250" height="55" style="display:block; margin:auto;" />
+        
+
+        <div id="chart"></div>
+        <div id="question"><h1></h1></div>
+    
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+        <script>
+        var padding = {top:20, right:40, bottom:0, left:0},
+                w = 500 - padding.left - padding.right,
+                h = 500 - padding.top  - padding.bottom,
+                r = Math.min(w, h)/2,
+                rotation = 0,
+                oldrotation = 0,
+                picked = 100000,
+                oldpick = [],
+                color = d3.scale.category20();
+                var data = [
+                        {"label":"輔大豬排",  "value":1,  "question":"現在立刻馬上給我去吃輔大豬排！"},
+                        {"label":"Danny's toasties",  "value":2,  "question":"現在立刻馬上給我去吃Danny's toasties！"},
+                        {"label":"黎記大腸蚵仔麵線",  "value":3,  "question":"現在立刻馬上給我去吃黎記大腸蚵仔麵線！"},
+                        {"label":"雪城麻辣燙",  "value":4,  "question":"現在立刻馬上給我去吃雪城麻辣燙！"},
+                        {"label":"晨間廚房",  "value":5,  "question":"現在立刻馬上給我去吃晨間廚房！"},
+                        {"label":"元珍食堂",  "value":6,  "question":"現在立刻馬上給我去吃元珍食堂！"},
+                        {"label":"雞加酒",  "value":7,  "question":"現在立刻馬上給我去吃雞加酒！"},
+                        {"label":"吉飽早餐",  "value":8,  "question":"現在立刻馬上給我去吃吉飽早餐！"},
+                        {"label":"紅鬍子手工窯烤披薩",  "value":9,  "question":"現在立刻馬上給我去吃紅鬍子手工窯烤披薩！"},
+                        {"label":"安東尼義式廚房", "value":10, "question":"現在立刻馬上給我去吃安東尼義式廚房！"},
+                        {"label":"歐姆先生",  "value":11,  "question":"現在立刻馬上給我去吃歐姆先生！"},
+                        {"label":"惹披薩", "value":12, "question":"現在立刻馬上給我去吃惹披薩！"},
+                        {"label":"一口入魂雞白湯拉麵",  "value":13,  "question":"現在立刻馬上給我去吃一口入魂雞白湯拉麵！"},
+                        {"label":"愛這味麻辣臭豆腐",  "value":14,  "question":"現在立刻馬上給我去吃愛這味麻辣臭豆腐！"},
+                        {"label":"饗食之屋",  "value":15,  "question":"現在立刻馬上給我去吃饗食之屋！"},
+                        {"label":"Mr.布魯水煮健康餐",  "value":16,  "question":"現在立刻馬上給我去吃Mr.布魯水煮健康餐！"},
+                        {"label":"初胖鐵板吐司",  "value":17,  "question":"現在立刻馬上給我去吃初胖鐵板吐司！"},
+                        {"label":"冰糖茶店",  "value":18,  "question":"現在立刻馬上給我去吃冰糖茶店！"},
+                        {"label":"泰國象",  "value":19,  "question":"現在立刻馬上給我去吃泰國象！"},
+                        {"label":"玖零年代燒玖零年代燒臘",  "value":20,  "question":"現在立刻馬上給我去吃玖零年代燒玖零年代燒臘！"},
+                        {"label":"鑫吉野烤肉飯",  "value":21,  "question":"現在立刻馬上給我去吃鑫吉野烤肉飯！"},
+                        {"label":"想初享廚", "value":22, "question":"現在立刻馬上給我去吃想初享廚！"},
+                        {"label":"正欣自助餐",  "value":23,  "question":"現在立刻馬上給我去吃正欣自助餐！"},
+                        {"label":"卜派大叔", "value":24, "question":"現在立刻馬上給我去吃卜派大叔！"},
+                        {"label":"麻派麻辣燙",  "value":25,  "question":"現在立刻馬上給我去吃麻派麻辣燙！"},
+                        {"label":"魯都香加熱滷味",  "value":26,  "question":"現在立刻馬上給我去吃魯都香加熱滷味！"},
+                        {"label":"魚多甜",  "value":27,  "question":"現在立刻馬上給我去吃魚多甜！"},
+                        {"label":"名廚鐵板燒",  "value":28,  "question":"現在立刻馬上給我去吃名廚鐵板燒！"},
+                        {"label":"御鼎饌傳統鵝肉",  "value":29,  "question":"現在立刻馬上給我去吃御鼎饌傳統鵝肉！"},
+                        {"label":"饞饞燒肉鍋物",  "value":30,  "question":"現在立刻馬上給我去吃饞饞燒肉鍋物！"},
+                        {"label":"好餓",  "value":31,  "question":"現在立刻馬上給我去吃好餓！"},
+                        {"label":"夯麵坊",  "value":32,  "question":"現在立刻馬上給我去吃夯麵坊！"},
+                        {"label":"荖葉牛肉麵",  "value":33,  "question":"現在立刻馬上給我去吃荖葉牛肉麵！"},
+                        {"label":"大汗麻辣鴨血大汗麻辣鴨血豆腐", "value":34, "question":"現在立刻馬上給我去吃大汗麻辣鴨血大汗麻辣鴨血豆腐！"},
+                        {"label":"阿山哥麵飯",  "value":35,  "question":"現在立刻馬上給我去吃阿山哥麵飯！"},
+                        {"label":"能量小姐", "value":36, "question":"現在立刻馬上給我去吃能量小姐！"},
+                        {"label":"勁牛肉麵館",  "value":37,  "question":"現在立刻馬上給我去吃勁牛肉麵館！"},
+                        {"label":"五路鍋聖",  "value":38,  "question":"現在立刻馬上給我去吃五路鍋聖！"},
+                        {"label":"赤炸一番",  "value":39,  "question":"現在立刻馬上給我去吃赤炸一番！"},
+                        {"label":"食全池上便當",  "value":40,  "question":"現在立刻馬上給我去吃食全池上便當！"},
+                        {"label":"老吳牛肉麵",  "value":41,  "question":"現在立刻馬上給我去吃老吳牛肉麵！"},
+                        {"label":"蓮華早餐",  "value":42,  "question":"現在立刻馬上給我去吃蓮華早餐！"},
+                        {"label":"醇滷味",  "value":43,  "question":"現在立刻馬上給我去吃醇滷味！"},
+                        {"label":"港島冰室",  "value":44,  "question":"現在立刻馬上給我去吃港島冰室！"},
+                        {"label":"8鍋",  "value":45,  "question":"現在立刻馬上給我去吃8鍋！"},
+                        {"label":"八哥酸辣粉", "value":46, "question":"現在立刻馬上給我去吃八哥酸辣粉！"},
+                        {"label":"輔大港式蒸餃",  "value":47,  "question":"現在立刻馬上給我去吃輔大港式蒸餃！"},
+                        {"label":"小上海鹽酥雞", "value":48, "question":"現在立刻馬上給我去吃小上海鹽酥雞！"},
+                        {"label":"壹三找餐",  "value":49,  "question":"現在立刻馬上給我去吃壹三找餐！"},
+                        {"label":"毓品香米糕",  "value":50,  "question":"現在立刻馬上給我去吃毓品香米糕！"},
+                        {"label":"烤匠C車",  "value":51,  "question":"現在立刻馬上給我去吃烤匠C車！"},
+                        {"label":"港口廣東粥",  "value":52,  "question":"現在立刻馬上給我去吃港口廣東粥！"},
+                        {"label":"傻瓜麵",  "value":53,  "question":"現在立刻馬上給我去吃傻瓜麵！"},
+                        {"label":"好味手工麵疙瘩",  "value":54,  "question":"現在立刻馬上給我去吃好味手工麵疙瘩！"},
+                        {"label":"粥道鐵路便當",  "value":55,  "question":"現在立刻馬上給我去吃粥道鐵路便當！"},
+                        {"label":"麵屋三郎",  "value":56,  "question":"現在立刻馬上給我去吃麵屋三郎！"},
+                        {"label":"路易莎",  "value":57,  "question":"現在立刻馬上給我去吃路易莎！"},
+                        {"label":"石二鍋", "value":58, "question":"現在立刻馬上給我去吃石二鍋！"},
+                        {"label":"磯壽司",  "value":59,  "question":"現在立刻馬上給我去吃磯壽司！"},
+                        {"label":"楓橋", "value":60, "question":"現在立刻馬上給我去吃楓橋！"},
+                        {"label":"弌弎捲餅",  "value":61,  "question":"現在立刻馬上給我去吃弌弎捲餅！"},
+                        {"label":"歐爸水煎包",  "value":62,  "question":"現在立刻馬上給我去吃歐爸水煎包！"},
+                        {"label":"愛玉早餐店",  "value":63,  "question":"現在立刻馬上給我去吃愛玉早餐店！"},
+                        {"label":"檸檬草",  "value":64,  "question":"現在立刻馬上給我去吃檸檬草！"},
+                        {"label":"竹拉麵",  "value":65,  "question":"現在立刻馬上給我去吃竹拉麵！"},
+                        {"label":"肯德基",  "value":66,  "question":"現在立刻馬上給我去吃肯德基！"},
+                        {"label":"12mini",  "value":67,  "question":"現在立刻馬上給我去吃12mini！"},
+                        {"label":"鍾予原味當歸",  "value":68,  "question":"現在立刻馬上給我去吃鍾予原味當歸！"},
+                        {"label":"摩斯漢堡",  "value":69,  "question":"現在立刻馬上給我去吃摩斯漢堡！"},
+                        {"label":"溫州大餛飩", "value":70, "question":"現在立刻馬上給我去吃溫州大餛飩！"},
+                        {"label":"工寓咖啡",  "value":71,  "question":"現在立刻馬上給我去吃工寓咖啡！"},
+                        {"label":"柒串燒屋", "value":72, "question":"現在立刻馬上給我去吃柒串燒屋！"},
+                        {"label":"崔記麻辣鴛鴦",  "value":73,  "question":"現在立刻馬上給我去吃崔記麻辣鴛鴦！"},
+                        {"label":"小木屋鬆餅",  "value":74,  "question":"現在立刻馬上給我去吃小木屋鬆餅！"},
+                        {"label":"麻麻號",  "value":75,  "question":"現在立刻馬上給我去吃麻麻號！"},
+                        {"label":"椒麻雞大王",  "value":76,  "question":"現在立刻馬上給我去吃椒麻雞大王！"},
+                        {"label":"Uncle Ray串燒",  "value":77,  "question":"現在立刻馬上給我去吃Uncle Ray串燒！"},
+                        {"label":"Sipping bistro餐酒館",  "value":78,  "question":"現在立刻馬上給我去吃Sipping bistro餐酒館！"},
+                        {"label":"辛巴原味碳烤牛排",  "value":79,  "question":"現在立刻馬上給我去吃辛巴原味碳烤牛排！"},
+                        {"label":"麥當勞",  "value":80,  "question":"現在立刻馬上給我去吃麥當勞！"},
+                        {"label":"星巴克",  "value":81,  "question":"現在立刻馬上給我去吃星巴克！"},
+                        {"label":"有朝一日", "value":82, "question":"現在立刻馬上給我去吃有朝一日！"},
+                        {"label":"施房涼麵",  "value":83,  "question":"現在立刻馬上給我去吃施房涼麵！"},
+                        {"label":"三舅媽油飯", "value":84, "question":"現在立刻馬上給我去吃三舅媽油飯！"},
+                        {"label":"劉家涼麵",  "value":85,  "question":"現在立刻馬上給我去吃劉家涼麵！"},
+                        {"label":"方禾食呂", "value":86, "question":"現在立刻馬上給我去吃方禾食呂！"}
+            ];
+        
+            var svg = d3.select('#chart')
+                .append("svg")
+                .data([data])
+                .attr("width",  w + padding.left + padding.right)
+                .attr("height", h + padding.top + padding.bottom);
+            var container = svg.append("g")
+                .attr("class", "chartholder")
+                .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
+            var vis = container
+                .append("g");
+            
+            var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+            var arc = d3.svg.arc().outerRadius(r);
+            var arcs = vis.selectAll("g.slice")
+                .data(pie)
+                .enter()
+                .append("g")
+                .attr("class", "slice");
+            
+            arcs.append("path")
+                .attr("fill", function(d, i){ return color(i); })
+                .attr("d", function (d) { return arc(d); });
+            arcs.append("text").attr("transform", function(d){
+                    d.innerRadius = 0;
+                    d.outerRadius = r;
+                    d.angle = (d.startAngle + d.endAngle)/2;
+                    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
+                })
+                .attr("text-anchor", "end")
+                .text( function(d, i) {
+                    return data[i].label;
+                });
+            container.on("click", spin);
+            function spin(d){
+            
+                container.on("click", null);
+                console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+                if(oldpick.length == data.length){
+                    console.log("done");
+                    container.on("click", null);
+                    return;
+                }
+                var  ps       = 360/data.length,
+                    pieslice = Math.round(1440/data.length),
+                    rng      = Math.floor((Math.random() * 1440) + 360);
+                
+                rotation = (Math.round(rng / ps) * ps);
+            
+                picked = Math.round(data.length - (rotation % 360)/ps);
+                picked = picked >= data.length ? (picked % data.length) : picked;
+                if(oldpick.indexOf(picked) !== -1){
+                    d3.select(this).call(spin);
+                    return;
+                } else {
+                    oldpick.push(picked);
+                }
+                rotation += 90 - Math.round(ps/2);
+                vis.transition()
+                    .duration(3000)
+                    .attrTween("transform", rotTween)
+                    .each("end", function(){
+                        d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                            .attr("fill", "#555252");
+                        d3.select("#question h1")
+                            .text(data[picked].question);
+                        oldrotation = rotation;
+                        console.log(data[picked].value)
+                        container.on("click", spin);
+                    });
+            }
+            svg.append("g")
+                .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
+                .append("path")
+                .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
+                .style({"fill":"pink"});
+            container.append("circle")
+                .attr("cx", 0)
+                .attr("cy", 0)
+                .attr("r", 50)
+                .style({"fill":"pink","cursor":"pointer"});
+            container.append("text")
+                .attr("x", 0)
+                .attr("y", 12)
+                .attr("text-anchor", "middle")
+                .text("吃啥！")
+                .style({"font-weight":"bold", "font-size":"25px"});
+        
+        
+            function rotTween(to) {
+            var i = d3.interpolate(oldrotation % 360, rotation);
+            return function(t) {
+                return "rotate(" + i(t) + ")";
+            };
+            }
+        
+        
+            function getRandomNumbers(){
+                var array = new Uint16Array(1000);
+                var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+                if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
+                    window.crypto.getRandomValues(array);
+                    console.log("works");
+                } else {
+                    for(var i=0; i < 1000; i++){
+                        array[i] = Math.floor(Math.random() * 100000) + 1;
+                    }
+                }
+                return array;
+            }
+        </script>
+
         <span style="top:125; left: 28;">吃吃喝喝樂翻天</span>
     </div>
 </main>
 </body>
-
-<script>
-    $(document).ready(function(){
-        $("#hide").click(function(){
-            $("p").toggle();
-        });
-        $("#name").css("color","gray");
-    });
-</script>
-
-<script type="text/javascript">
-    var imgs = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
-    var index = 0;
-    var len = imgs.length;
-$(".btn").on("click" , function(){
-    if($(this).data("control") === "last"){
-        index = Math.max(0,--index);
-    }else
-        index = Math.min(len-1,++index);
-        document.title = (index+1)+"/"+len;
-        $("#img").attr("src",imgs[index]);
-    });
-</script>
-
 </html>
