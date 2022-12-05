@@ -124,6 +124,7 @@ nav a:hover{
 .all,
 .all2{
     display: flex;
+    text-align: center;
 }
 .inline-block{
     display: inline-block;
@@ -393,6 +394,75 @@ nav a:hover{
             animation-play-state: paused;
 }
 
+
+/*按鈕*/
+.btn-1 :after,
+.btn-1 :before,
+.btn-1:after,
+.btn-1:before,
+.btn-2 :after,
+.btn-2 :before,
+.btn-2:after,
+.btn-2:before,
+.btn-3 :after,
+.btn-3 :before,
+.btn-3:after,
+.btn-3:before{
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-1,.btn-2,.btn-3{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: rgb(108, 105, 105);
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin:0;
+  -webkit-mask-image: -webkit-radial-gradient(rgb(108, 105, 105), #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+.btn-1:disabled,
+.btn-2:disabled,
+.btn-3:disabled{
+  cursor: default;
+}
+.btn-1:-moz-focusring,
+.btn-2:-moz-focusring,
+.btn-3:-moz-focusring {
+  outline: auto;
+}
+.btn-1 svg,
+.btn-2 svg,
+.btn-3 svg {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+}
+.btn-1 [hidden],
+.btn-2 [hidden],
+.btn-3 [hidden] {
+  display: none;
+}
+.btn-1,
+.btn-2,
+.btn-3 {
+  border-radius: 99rem;
+  border-width: 2px;
+  padding: 0.8rem 3rem;
+  margin-top: 20px;
+ 
+}
+.btn-1:hover,
+.btn-2:hover,
+.btn-3:hover {
+  color: #999;
+}
 /*米色背景*/
 .d{
     margin-top: 0%;
