@@ -50,7 +50,7 @@ nav a:hover{
     font-family: 'Permanent Marker', cursive;
     font-size: 130px;
     text-align: center;
-    right: 350px;
+    right: 100px;
     font-weight: bold;
     line-height: 200px;
     text-transform: uppercase; /*大寫*/
@@ -119,11 +119,31 @@ nav a:hover{
     color: #535151;
     margin-top: 20px;
 }
-/*圖片輪播1*/
+
 /*定位*/
+.all,
+.all2{
+    display: flex;
+}
+.inline-block{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+    height: 240px;
+}
+.inline-block2{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+    height: 375px;
+}
+
+/*圖片輪播1*/
 .slider_container {
-    margin-left: 160px;
-    margin-top: 50px;
     width: 300px;
     height: 240px;
     position: relative;
@@ -208,8 +228,6 @@ nav a:hover{
 /*圖片輪播2*/
 /*定位*/
 .slider_container2 {
-    margin-left: 560px;
-    margin-top: -310px;
     width: 300px;
     height: 240px;
     position: relative;
@@ -294,8 +312,6 @@ nav a:hover{
 /*圖片輪播3*/
 /*定位*/
 .slider_container3 {
-    margin-left: 960px;
-    margin-top: -310px;
     width: 300px;
     height: 240px;
     position: relative;
@@ -376,88 +392,7 @@ nav a:hover{
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
 }
-/*按鈕*/
-.btn-1,
-.btn-1 *,
-.btn-1 :after,
-.btn-1 :before,
-.btn-1:after,
-.btn-1:before,
-.btn-2,
-.btn-2 *,
-.btn-2 :after,
-.btn-2 :before,
-.btn-2:after,
-.btn-2:before,
-.btn-3,
-.btn-3 *,
-.btn-3 :after,
-.btn-3 :before,
-.btn-3:after,
-.btn-3:before{
-  border: 0 solid;
-  box-sizing: border-box;
-}
-.btn-1,.btn-2,.btn-3{
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: rgb(108, 105, 105);
-  background-image: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
-  font-weight: 900;
-  line-height: 1.5;
-  margin-top: 16px;
-  -webkit-mask-image: -webkit-radial-gradient(rgb(108, 105, 105), #fff);
-  padding: 0;
-  text-transform: uppercase;
-}
-.btn-1{
-    margin-left: 222px;
-}
-.btn-2{
-    margin-left: 630px;
-}
-.btn-3{
-    margin-left: 1030px;
-}
-.btn-1:disabled,
-.btn-2:disabled,
-.btn-3:disabled{
-  cursor: default;
-}
-.btn-1:-moz-focusring,
-.btn-2:-moz-focusring,
-.btn-3:-moz-focusring {
-  outline: auto;
-}
-.btn-1 svg,
-.btn-2 svg,
-.btn-3 svg {
-  display: block;
-  vertical-align: middle;
-}
-.btn-1 [hidden],
-.btn-2 [hidden],
-.btn-3 [hidden] {
-  display: none;
-}
-.btn-1,
-.btn-2,
-.btn-3 {
-  border-radius: 99rem;
-  border-width: 2px;
-  padding: 0.8rem 3rem;
-}
-.btn-1:hover,
-.btn-2:hover,
-.btn-3:hover {
-  color: #999;
-}
+
 /*米色背景*/
 .d{
     margin-top: 0%;
@@ -466,8 +401,6 @@ nav a:hover{
 }
 /*僅圖片（價錢分類）*/
 .container {
-    margin-left: 160px;
-    margin-top: 20px;
     width: 300px;
     height: 375px;
     position: relative;
@@ -477,8 +410,6 @@ nav a:hover{
     box-shadow: #666 0 0 5px;
 }
 .container2 {
-    margin-left: 560px;
-    margin-top: -445px;
     width: 300px;
     height: 375px;
     position: relative;
@@ -489,8 +420,6 @@ nav a:hover{
     box-shadow: #666 0 0 5px;
 }
 .container3 {
-    margin-left: 960px;
-    margin-top: -440px;
     width: 300px;
     height: 375px;
     position: relative;
