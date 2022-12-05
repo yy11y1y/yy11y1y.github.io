@@ -84,7 +84,7 @@
                     <span class="info">好味手工麵疙瘩</span>
                 </div>
             </div>
-            <a href="22.html"><button class="btn-1">-建國一路-</button></a>
+            <a href="建國一路.html"><button class="btn-1">-建國一路-</button></a>
         </div>
         
         <div class="inline-block">
@@ -145,6 +145,8 @@
 
 
 
+
+
     </pre>
     </div>
 
@@ -185,6 +187,8 @@
 
 
 
+        
+
 
     </pre>
     </div>   
@@ -220,8 +224,7 @@
                 rotation = 0,
                 oldrotation = 0,
                 picked = 100000,
-                oldpick = [],
-                color = d3.scale.category20();
+                oldpick = []
                 var data = [
                         {"label":"輔大豬排",  "value":1,  "question":"現在立刻馬上給我去吃輔大豬排！"},
                         {"label":"Danny's toasties",  "value":2,  "question":"現在立刻馬上給我去吃Danny's toasties！"},
@@ -330,9 +333,21 @@
                 .append("g")
                 .attr("class", "slice");
             
-            arcs.append("path")
-                .attr("fill", function(d, i){ return color(i); })
-                .attr("d", function (d) { return arc(d); });
+            function evenOrOddColor(index, color1, color2) {
+                console.log(index)
+                if (index % 2 === 0) {
+                return color1
+            } else {
+                return color2
+            };
+            }
+        arcs.append("path")
+            .attr("fill", function(d, i){ 
+           return evenOrOddColor(i, '#cbb1b1', '#ececd6')
+          })
+            .attr("d", function (d) { 
+            return arc(d);
+          });
             arcs.append("text").attr("transform", function(d){
                     d.innerRadius = 0;
                     d.outerRadius = r;
@@ -385,12 +400,12 @@
                 .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
                 .append("path")
                 .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
-                .style({"fill":"pink"});
+                .style({"fill":"#9f5a5a"});
             container.append("circle")
                 .attr("cx", 0)
                 .attr("cy", 0)
                 .attr("r", 50)
-                .style({"fill":"pink","cursor":"pointer"});
+                .style({"fill":"#9f5a5a","cursor":"pointer"});
             container.append("text")
                 .attr("x", 0)
                 .attr("y", 12)

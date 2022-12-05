@@ -37,36 +37,34 @@
         <div id="picBox">
             <img src="images/1-1.jpeg" id="pic" width="360px" height="300px">
             <div id="buttonBox">
-              <input type="button" value="上一張" onclick="pre();">
-              <input type="button" value="下一張" onclick="next();">
+              <input type="button" value="back" onclick="pre();">
+              <input type="button" value="next" onclick="next();">
             </div>
         </div>
         <div class="word">
             <h2>滷都香加熱滷味</h2>
             <a href="https://maps.google.com?g_st=ic" target="_blank">地址：242新北市新莊區</a>
-            <p>評論：  星</p>
+            <p>評論：4.1星</p>
         </div>
     </div>
 
     <div class="o1">
-        <div id="picBox">
+        <div id="picBox2">
             <img src="images/2-1.jpeg" id="pic2" width="360px" height="300px">
-            <div id="buttonBox">
-              <input type="button" value="上一張" onclick="pre2();">
-              <input type="button" value="下一張" onclick="next2();">
+            <div id="buttonBox2">
+              <div class="bb"><input type="button" value="back" onclick="pre2();"></div>
+              <div class="bb"></div><input type="button" value="next" onclick="next2();"></div>
             </div>
         </div>
         <div class="word">
             <h2>魚多甜輔大店</h2>
             <a href="https://maps.app.goo.gl/dF6fNDjrexzFSR9r8?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路1號</a>
-            <p>評論：  星</p>
+            <p>評論：4.7星</p>
         </div>
     </div>
-
+    
     </div>
     </main>
-
-
     <script>
         var picArr=new Array("images/1-1.jpeg","images/1-2.jpeg");
         var index=0;
@@ -85,24 +83,26 @@
             }
         document.getElementById("pic").src=picArr[index];
         }
-        
-        var picArr=new Array("images/2-1.jpeg","images/2-2.jpeg");
+
+         
+        var picArr2=new Array("images/2-1.jpeg","images/2-2.jpeg");
         var index=0;
         function next2(){
             index++;
-        if(index==picArr.length){
+        if(index==picArr2.length){
                 index=0;
         }
-        document.getElementById("pic2").src=picArr[index];
+        document.getElementById("pic2").src=picArr2[index];
         }
 
         function pre2(){
             index--;
             if(index<0){
-                index=picArr.length-1;
+                index=picArr2.length-1;
             }
-        document.getElementById("pic2").src=picArr[index];
+        document.getElementById("pic2").src=picArr2[index];
         }
+   
     </script>
 
 </body>
