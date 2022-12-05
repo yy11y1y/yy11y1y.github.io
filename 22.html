@@ -13,45 +13,104 @@
     </script>
 </head>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/earlyaccess/cwtexyen.css');    /*圓體*/
+</style>
+
 <body>
     <main>
         <nav>
             <ul class="flex-nav">
                 <li><a href="#">HOME</a></li>
-                <li><a href="#p1">| 路線幫你分 |</a></li>
-                <li><a href="#p2">| 價錢幫你分 |</a></li>
-                <li><a href="#p3">| 飲料＆小吃 |</a></li>
-                <li><a href="#p4">| 轉盤幫你選 |</a></li>
+                <li><a href="#">| 514巷 |</a></li>
+                <li><a href="#">| 中正路 |</a></li>
+                <li><a href="#">| 飲料＆小吃 |</a></li>
+                <li><a href="#">| 回到頂部 |</a></li>
             </ul>
         </nav>
+
+    <div class="x">
+        <h1><div contenteditable="true"class="text2 effect01">建國一路</div></h1>
+
+    <div class="o1">
+        <div id="picBox">
+            <img src="images/1-1.jpeg" id="pic" width="360px" height="300px">
+            <div id="buttonBox">
+              <input type="button" value="上一張" onclick="pre();">
+              <input type="button" value="下一張" onclick="next();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>滷都香加熱滷味</h2>
+            <a href="https://maps.google.com?g_st=ic" target="_blank">地址：242新北市新莊區</a>
+            <p>評論：  星</p>
+        </div>
+    </div>
+
+    <div class="o1">
+        <div id="picBox">
+            <img src="images/2-1.jpeg" id="pic2" width="360px" height="300px">
+            <div id="buttonBox">
+              <input type="button" value="上一張" onclick="pre2();">
+              <input type="button" value="下一張" onclick="next2();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>魚多甜輔大店</h2>
+            <a href="https://maps.app.goo.gl/dF6fNDjrexzFSR9r8?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路1號</a>
+            <p>評論：  星</p>
+        </div>
+    </div>
+
+    </div>
     </main>
+
+
+    <script>
+        var picArr=new Array("images/1-1.jpeg","images/1-2.jpeg");
+        var index=0;
+        function next(){
+            index++;
+        if(index==picArr.length){
+                index=0;
+        }
+        document.getElementById("pic").src=picArr[index];
+        }
+
+        function pre(){
+            index--;
+            if(index<0){
+                index=picArr.length-1;
+            }
+        document.getElementById("pic").src=picArr[index];
+        }
+        
+        var picArr=new Array("images/2-1.jpeg","images/2-2.jpeg");
+        var index=0;
+        function next2(){
+            index++;
+        if(index==picArr.length){
+                index=0;
+        }
+        document.getElementById("pic2").src=picArr[index];
+        }
+
+        function pre2(){
+            index--;
+            if(index<0){
+                index=picArr.length-1;
+            }
+        document.getElementById("pic2").src=picArr[index];
+        }
+    </script>
+
 </body>
 </html>
 
 
 
-/*舊*/
-<script>
-    $(document).ready(function(){
-        $("#hide").click(function(){
-            $("p").toggle();
-        });
-        $("#name").css("color","gray");
-    });
-</script>
 
-<script type="text/javascript">
-var imgs = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
-var index = 0;
-var len = imgs.length;
-$(".btn").on("click" , function(){
-if($(this).data("control") === "last"){
-    index = Math.max(0,--index);
-}else
-    index = Math.min(len-1,++index);
-    document.title = (index+1)+"/"+len;
-    $("#img").attr("src",imgs[index]);
-});
-</script>
+
 
 

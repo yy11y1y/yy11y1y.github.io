@@ -39,7 +39,7 @@ nav a:hover{
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     height: 1000px;
     margin-bottom: 0px;
@@ -50,12 +50,12 @@ nav a:hover{
     font-family: 'Permanent Marker', cursive;
     font-size: 130px;
     text-align: center;
-    right: 100px;
+    right: 150px;
     font-weight: bold;
     line-height: 200px;
     text-transform: uppercase; /*大寫*/
     position: relative;
-    } 
+} 
 /*立體字效果*/
 .effect01{
     color: #90243E;
@@ -559,17 +559,59 @@ pic{
     transform:translate(0,-50%);
 }
 
-
-
-
-
-
-
-/*未使用*/
-.h{
-    padding: 2px;
-    margin: 0%;
-    background: #F2E6E6;
-    border-top: solid 5px #e3cccc;
-    border-bottom: solid 5px #EBD6D6;
+/*page2*/
+/*底色*/
+.x{
+    background-color:#E8DCCA;
+}
+/*字體*/
+@import url("reset.css");
+.text2{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 80px;
+    text-align: center;
+    top: 25px;
+    font-weight: bold;
+    line-height: 200px;
+    text-transform: uppercase; /*大寫*/
+    position: relative;
+} 
+/*立體字效果*/
+.effect01{
+    color: #90243E;
+    text-shadow:
+        0px 0px 0 #B63A51,
+        1px -1px 0 #B63A51,
+        2px -1px 0 #B63A51,
+        3px -3px 0 #B63A51,
+        4px -4px 0 #B63A51,
+        5px -5px 0 #B63A51,
+        6px -6px 0 #B63A51,
+        7px -7px 0 #B63A51,
+        8px -8px 0 #B63A51,
+        9px -9px 0 #db7084,
+        10px -10px 0 #db7084,
+        11px -11px 0 #db7084,
+        12px -12px 0 #db7084,
+        13px -13px 12px rgba(0, 0, 0, 0.55),
+        13px -13px 1px rgba(0, 0, 0, 0.5);
+}
+/*左圖右文*/
+.o1{
+    width: 800px;
+    margin: 50px auto;
+    border:solid 1px gray;
+    align-items: center;
+    display: flex;
+    overflow: hidden; /* 避免長方框下面顯示不正常 */
+  }
+.picBox{
+    float: left;
+    vertical-align: middle;
+}
+.word{
+    float:right;
+    text-align: center;
+    line-height: 70px;
+    padding-left: 140px;
 }
