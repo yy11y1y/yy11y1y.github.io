@@ -538,14 +538,14 @@ nav a:hover{
     width:500px;
     height:500px;
     top: 10px;
-    left: 10px;
+    left: 200px;
 }
 #question{
     position: relative;
     width:400px;
     height:500px;
     top:-480px;
-    left:520px;
+    left:720px;
 }
 #question h1{
     font-size: 20px;
