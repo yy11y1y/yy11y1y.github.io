@@ -36,21 +36,21 @@ nav a:hover{
 .o{
     background-image:url(background.jpg) ;
     z-index: -1;
-    height: 1000px;
-    margin-bottom: 0px;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: 100% 100%;
+    background-size: contain;
     background-position: center;
+    height: 1000px;
+    margin-bottom: 0px;
 }
 /*立體字字體*/
 @import url("reset.css");
 .text{
     font-family: 'Permanent Marker', cursive;
     font-size: 130px;
-    text-align: left;
-    left: 200px;
+    text-align: center;
+    right: 350px;
     font-weight: bold;
     line-height: 200px;
     text-transform: uppercase; /*大寫*/
@@ -81,7 +81,7 @@ nav a:hover{
 .y{
     color: #535151;
     position: relative;
-    left: 600px;
+    text-align: center;
     font-family: 'Noto Serif TC', serif;
     font-size: 40px;
 }
