@@ -93,6 +93,66 @@
         </div>
     </div>
 
+    <div class="o1">
+        <div id="picBox5">
+            <img src="images/5-1.jpeg" id="pic5" width="360px" height="300px">
+            <div id="buttonBox5">
+              <input type="button" value="back" onclick="pre5();">
+              <input type="button" value="next" onclick="next5();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>御鼎饌傳統鵝肉</h2>
+            <a href="https://maps.app.goo.gl/jhpbsNJ9hQXxni9k9?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路6號</a>
+            <p>評論：3.8星</p>
+        </div>
+    </div>
+
+    <div class="o1">
+        <div id="picBox6">
+            <img src="images/6-1.jpeg" id="pic6" width="360px" height="300px">
+            <div id="buttonBox6">
+              <input type="button" value="back" onclick="pre6();">
+              <input type="button" value="next" onclick="next6();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>御鼎饌傳統鵝肉</h2>
+            <a href="https://maps.app.goo.gl/jhpbsNJ9hQXxni9k9?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路6號</a>
+            <p>評論：3.8星</p>
+        </div>
+    </div>
+
+    <div class="o1">
+        <div id="picBox7">
+            <img src="images/7-1.jpeg" id="pic7" width="360px" height="300px">
+            <div id="buttonBox7">
+              <input type="button" value="back" onclick="pre7();">
+              <input type="button" value="next" onclick="next7();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>御鼎饌傳統鵝肉</h2>
+            <a href="https://maps.app.goo.gl/jhpbsNJ9hQXxni9k9?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路6號</a>
+            <p>評論：3.8星</p>
+        </div>
+    </div>
+
+    <div class="o1">
+        <div id="picBox8">
+            <img src="images/8-1.jpeg" id="pic8" width="360px" height="300px">
+            <div id="buttonBox8">
+              <input type="button" value="back" onclick="pre8();">
+              <input type="button" value="next" onclick="next8();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>御鼎饌傳統鵝肉</h2>
+            <a href="https://maps.app.goo.gl/jhpbsNJ9hQXxni9k9?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路6號</a>
+            <p>評論：3.8星</p>
+        </div>
+    </div>
+
     </div>
     </main>
     <script>
@@ -100,6 +160,10 @@
         var picArr2=new Array("images/2-1.jpeg","images/2-2.jpeg");
         var picArr3=new Array("images/3-1.jpeg","images/3-2.jpeg");
         var picArr4=new Array("images/4-1.jpeg","images/4-2.jpeg");
+        var picArr5=new Array("images/5-1.jpeg","images/5-2.jpeg");
+        var picArr6=new Array("images/6-1.jpeg","images/6-2.jpeg");
+        var picArr7=new Array("images/7-1.jpeg","images/7-2.jpeg");
+        var picArr8=new Array("images/8-1.jpeg","images/8-2.jpeg");
 
 
         var index=0;
@@ -167,10 +231,71 @@
         }
         document.getElementById("pic4").src=picArr4[index];
         }
+
+        function pre5(){
+            index--;
+            if(index<0){
+                index=picArr5.length-1;
+            }
+        document.getElementById("pic5").src=picArr5[index];
+                }
+
+        function next5(){
+            index++;
+        if(index==picArr5.length){
+                index=0;
+        }
+        document.getElementById("pic5").src=picArr5[index];
+        }
         
+        function pre6(){
+            index--;
+            if(index<0){
+                index=picArr6.length-1;
+            }
+        document.getElementById("pic6").src=picArr6[index];
+                }
+
+        function next6(){
+            index++;
+        if(index==picArr6.length){
+                index=0;
+        }
+        document.getElementById("pic6").src=picArr6[index];
+        }
         
-        
-   
+        function pre7(){
+            index--;
+            if(index<0){
+                index=picArr7.length-1;
+            }
+        document.getElementById("pic7").src=picArr7[index];
+                }
+
+        function next7(){
+            index++;
+        if(index==picArr7.length){
+                index=0;
+        }
+        document.getElementById("pic7").src=picArr7[index];
+        }
+
+        function pre8(){
+            index--;
+            if(index<0){
+                index=picArr8.length-1;
+            }
+        document.getElementById("pic8").src=picArr8[index];
+                }
+
+        function next8(){
+            index++;
+        if(index==picArr8.length){
+                index=0;
+        }
+        document.getElementById("pic8").src=picArr8[index];
+        }
+    
     </script>
 
 </body>
