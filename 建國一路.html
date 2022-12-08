@@ -22,7 +22,7 @@
     <main>
         <nav>
             <ul class="flex-nav">
-                <li><a href="#">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="#">| 514巷 |</a></li>
                 <li><a href="#">| 中正路 |</a></li>
                 <li><a href="#">| 飲料＆小吃 |</a></li>
@@ -52,8 +52,8 @@
         <div id="picBox2">
             <img src="images/2-1.jpeg" id="pic2" width="360px" height="300px">
             <div id="buttonBox2">
-              <div class="bb"><input type="button" value="back" onclick="pre2();"></div>
-              <div class="bb"></div><input type="button" value="next" onclick="next2();"></div>
+              <input type="button" value="back" onclick="pre2();">
+              <input type="button" value="next" onclick="next2();">
             </div>
         </div>
         <div class="word">
@@ -62,37 +62,62 @@
             <p>評論：4.7星</p>
         </div>
     </div>
-    
+
+    <div class="o1">
+        <div id="picBox3">
+            <img src="images/3-1.jpeg" id="pic3" width="360px" height="300px">
+            <div id="buttonBox3">
+              <input type="button" value="back" onclick="pre3();">
+              <input type="button" value="next" onclick="next3();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>名廚鐵板燒</h2>
+            <a href="https://goo.gl/maps/HWxHqNkwL31FKfrw8" target="_blank">地址： 242新北市新莊區建國一路3號</a>
+            <p>評論：4.2星</p>
+        </div>
+    </div>
+
+    <div class="o1">
+        <div id="picBox4">
+            <img src="images/4-1.jpeg" id="pic4" width="360px" height="300px">
+            <div id="buttonBox4">
+              <input type="button" value="back" onclick="pre4();">
+              <input type="button" value="next" onclick="next4();">
+            </div>
+        </div>
+        <div class="word">
+            <h2>御鼎饌傳統鵝肉</h2>
+            <a href="https://maps.app.goo.gl/jhpbsNJ9hQXxni9k9?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路6號</a>
+            <p>評論：3.8星</p>
+        </div>
+    </div>
+
     </div>
     </main>
     <script>
         var picArr=new Array("images/1-1.jpeg","images/1-2.jpeg");
+        var picArr2=new Array("images/2-1.jpeg","images/2-2.jpeg");
+        var picArr3=new Array("images/3-1.jpeg","images/3-2.jpeg");
+        var picArr4=new Array("images/4-1.jpeg","images/4-2.jpeg");
+
+
         var index=0;
-        function next(){
-            index++;
-        if(index==picArr.length){
-                index=0;
-        }
-        document.getElementById("pic").src=picArr[index];
-        }
 
         function pre(){
             index--;
             if(index<0){
                 index=picArr.length-1;
             }
-        document.getElementById("pic").src=picArr[index];
-        }
+        document.getElementById("pic","pic2").src=picArr[index];
+                }
 
-         
-        var picArr2=new Array("images/2-1.jpeg","images/2-2.jpeg");
-        var index=0;
-        function next2(){
+        function next(){
             index++;
-        if(index==picArr2.length){
+        if(index==picArr.length){
                 index=0;
         }
-        document.getElementById("pic2").src=picArr2[index];
+        document.getElementById("pic","pic2").src=picArr[index];
         }
 
         function pre2(){
@@ -101,7 +126,50 @@
                 index=picArr2.length-1;
             }
         document.getElementById("pic2").src=picArr2[index];
+                }
+
+        function next2(){
+            index++;
+        if(index==picArr2.length){
+                index=0;
         }
+        document.getElementById("pic2").src=picArr2[index];
+        }
+
+        function pre3(){
+            index--;
+            if(index<0){
+                index=picArr3.length-1;
+            }
+        document.getElementById("pic3").src=picArr3[index];
+                }
+
+        function next3(){
+            index++;
+        if(index==picArr3.length){
+                index=0;
+        }
+        document.getElementById("pic3").src=picArr3[index];
+        }
+
+        function pre4(){
+            index--;
+            if(index<0){
+                index=picArr4.length-1;
+            }
+        document.getElementById("pic4").src=picArr4[index];
+                }
+
+        function next4(){
+            index++;
+        if(index==picArr4.length){
+                index=0;
+        }
+        document.getElementById("pic4").src=picArr4[index];
+        }
+        
+        
+        
    
     </script>
 
