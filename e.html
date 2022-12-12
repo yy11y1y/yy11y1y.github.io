@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/earlyaccess/cwtexyen.css');    /*圓體*/
+</style>
+
+<body>
+    <main>
+        <nav>
+            <ul class="flex-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="c.html">| 月底省著點 |</a></li>
+                <li><a href="m.html">| 平凡的一天 |</a></li>
+                <li><a href="#">| 回到頂部 |</a></li>
+            </ul>
+        </nav>
+
+    <div class="x">
+        <h1><div contenteditable="true"class="text2 effect01">昨天領薪水</div></h1>
+    
+        <div class="o1">
+            <div id="picBox">
+                <img src="images/33-1.jpeg" id="pic1" width="360px" height="300px">
+                <div id="buttonBox33">
+                  <input type="button" value="back" onclick="pre(0 ,'pic1');">
+                  <input type="button" value="next" onclick="next(0 ,'pic1');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>麵屋三郎</h2>
+                <a href="https://maps.app.goo.gl/SuYmbAcEj98RVqgo9?g_st=ic" target="_blank">地址：242新北市新莊區建國一路92號</a>
+                <p>評論：4.1星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox">
+                <img src="images/2-1.jpeg" id="pic2" width="360px" height="300px">
+                <div id="buttonBox2">
+                    <input type="button" value="back" onclick="pre(1, 'pic2');">
+                    <input type="button" value="next" onclick="next(1, 'pic2');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>魚多甜輔大店</h2>
+                <a href="https://maps.app.goo.gl/dF6fNDjrexzFSR9r8?g_st=ic" target="_blank">地址： 242新北市新莊區建國一路1號</a>
+                <p>評論：4.7星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox">
+                <img src="images/3-1.jpeg" id="pic3" width="360px" height="300px">
+                <div id="buttonBox3">
+                  <input type="button" value="back" onclick="pre(2 ,'pic3');">
+                  <input type="button" value="next" onclick="next(2, 'pic3');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>名廚鐵板燒</h2>
+                <a href="https://goo.gl/maps/HWxHqNkwL31FKfrw8" target="_blank">地址： 242新北市新莊區建國一路3號</a>
+                <p>評論：4.2星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox2">
+                <img src="images/5-1-2.jpeg" id="pic4" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(3, 'pic4'); ">
+                    <input type="button" value="next" onclick="next(3, 'pic4');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>檸檬草美食茶房 新莊店</h2>
+                <a href="https://goo.gl/maps/aunifU7W4UVJB9Ch6" target="_blank">地址：242新北市新莊區中正路571號</a>
+                <p>評論：4.1星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox2">
+                <img src="images/19-1-2.jpeg" id="pic5" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(4, 'pic5'); ">
+                    <input type="button" value="next" onclick="next(4, 'pic5');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>Sipping Bistro 啜飲餐酒館</h2>
+                <a href="https://goo.gl/maps/dfAx9K6AAU273Ka9A" target="_blank">地址：242新北市新莊區中正路603號</a>
+                <p>評論：4.7星</p>
+            </div>
+        </div>
+        
+        <div class="o1">
+            <div id="picBox2">
+                <img src="images/20-1-2.jpeg" id="pic6" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(5, 'pic6'); ">
+                    <input type="button" value="next" onclick="next(5, 'pic6');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>辛巴原味碳烤牛排</h2>
+                <a href="https://goo.gl/maps/96HvnDhn5bys6LaYA" target="_blank">地址：24257新北市新莊區中正路609號</a>
+                <p>評論：4.5星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox">
+                <img src="images/35-1.jpeg" id="pic7" width="360px" height="300px">
+                <div id="buttonBox35">
+                  <input type="button" value="back" onclick="pre(6 ,'pic7');">
+                  <input type="button" value="next" onclick="next(6 ,'pic7');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>石二鍋 新莊輔大店</h2>
+                <a href="https://maps.app.goo.gl/Uo7CPuzUaQqT2SSE6?g_st=ic" target="_blank">地址：242新北市新莊區建國一路61號</a>
+                <p>評論：4.2星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox2">
+                <img src="images/22-1-2.jpeg" id="pic8" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(7, 'pic8'); ">
+                    <input type="button" value="next" onclick="next(7, 'pic8');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>STARBUCKS 星巴克 (新莊尚德門市</h2>
+                <a href="https://goo.gl/maps/4PHcNHSoFUgUz8kK9" target="_blank">地址：242新北市新莊區中正路518號
+                </a>
+                <p>評論：4.1星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox2">
+                <img src="images/14-1-2.jpeg" id="pic9" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(8, 'pic9'); ">
+                    <input type="button" value="next" onclick="next(8, 'pic9');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>崔記麻辣鴛鴦-新莊店</h2>
+                <a href="https://goo.gl/maps/1DRYEHWdj8Aps6dJ6" target="_blank">地址：242新北市新莊區中正路599號1樓</a>
+                <p>評論：4.9星</p>
+            </div>
+          </div>
+        
+          <div class="o1">
+            <div id="picBox2">
+                <img src="images/1-1-2.jpeg" id="pic10" width="360px" height="300px">
+                <div id="buttonBox">
+                    <input type="button" value="back" onclick="pre(9, 'pic10'); ">
+                    <input type="button" value="next" onclick="next(9, 'pic10');">
+                </div>
+            </div>
+            <div class="word">
+                <h2>輔大 磯壽司(青壽司)</h2>
+                <a href="https://goo.gl/maps/gUw4S5KDcRJFyJTZA" target="_blank">地址：242新北市新莊區中正路498號</a>
+                <p>評論：4.5星</p>
+            </div>
+          </div>
+
+        </div>
+    </main>
+    <script>
+       const resArr = [
+            {  img1 : "images/33-1-1.jpeg",
+               img2 : "images/33-2-1.jpeg"
+            },
+            {
+                img1 : "images/2-1.jpeg",
+                img2 : "images/2-2.jpeg"
+            },
+            {
+                img1 : "images/3-1.jpeg",
+                img2 : "images/3-2.jpeg"
+            },
+            {
+                img1 : "images/5-1-2.jpeg",
+                img2 : "images/5-2-2.jpeg"
+            },
+            {
+                img1 : "images/19-1-2.jpeg",
+                img2 : "images/19-2-2.jpeg"
+            },
+            {
+                img1 : "images/20-1-2.jpeg",
+                img2 : "images/20-2-2.jpeg"
+            },
+            {
+                img1 : "images/35-1.jpeg",
+                img2 : "images/35-2.jpeg"
+            },
+            {
+                img1 : "images/22-1-2.jpeg",
+                img2 : "images/22-2-2.jpeg"
+            },
+            {
+                img1 : "images/14-1-2.jpeg",
+                img2 : "images/14-2-2.jpeg"
+            },
+            {
+                img1 : "images/1-1-2.jpeg",
+                img2 : "images/1-2-2.jpeg"
+            }
+        ]
+
+        function pre(index, picId){
+            source = resArr[index].img1;
+            document.getElementById(picId).src = source;
+        }
+
+        function next(index, picId){
+            source = resArr[index].img2;
+            document.getElementById(picId).src = source;
+        }
+    </script>
+
+</body>
+</html>
